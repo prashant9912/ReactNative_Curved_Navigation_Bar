@@ -3,9 +3,10 @@
 
 Animated Curved Navigation Bar for React Native
 
-![ ](https://i.imgur.com/G1zYbRK.gif =400x)
 
-![ ](https://i.imgur.com/Gc0bpx9.gif =400x)
+<img src="https://i.imgur.com/G1zYbRK.gif" width=400/>
+<br/>
+<img src="https://i.imgur.com/Gc0bpx9.gif" width=400/>
 
 
 Props
@@ -21,6 +22,6 @@ Props
 |mainOffSetAndroid |number | - | bottom offset of nav bar in android
 
 ### Todo features
-👉🏼To implement change tab from foreign component
-👉🏼To fix for less than 5 icons
-👉🏼more styles and customize option
+👉🏼To implement change tab from foreign component<br/>
+👉🏼To fix for less than 5 icons<br/>
+👉🏼more styles and customize option<br/>
