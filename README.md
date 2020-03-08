@@ -8,6 +8,19 @@ Animated Curved Navigation Bar for React Native
 <br/>
 <img src="https://i.imgur.com/Gc0bpx9.gif" width=400/>
 
+Getting Started
+---------
+1 | You need to install React native Vector Icons <br/>
+`npm i react-native-vector-icons`
+<br/> Goto https://github.com/oblador/react-native-vector-icons to solve linking problems(if occurs).
+
+
+2 | Install Rn curved navigation bar <br>
+`npm i rn-curved-navigation-bar`
+
+or
+
+`yarn add rn-curved-navigation-bar`
 
 Props
 ---------
