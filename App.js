@@ -14,16 +14,11 @@ const {height,width} = Dimensions.get('window');
 let selected= 1;
 
 let yoffset=-30;
-let primColor= '#4687FD';
+// let primColor= '#4687FD';
 let iconSize=25
-let selectedIconColor='white'
-let iconColor='black'
+// let selectedIconColor='white'
+// let iconColor='black'
 
-let icon1 = "plus"
-let icon2 = "heart"
-let icon3 = "airplane"
-let icon4 = "call-split"
-let icon5 = "account-heart"
 
 let mainOffSet=Platform.OS==='ios'?20:0;
 
@@ -31,10 +26,32 @@ let slider = [(2*1-1)*((1*(width/5))/2)+84,(2*5-1)*((1*(width/5))/2)+84]
 
 export default class App extends Component{
 
-  animatedValue= new Animated.Value(selected);
+state={
+  iconColor:'black', //default color black
+  primColor:'#4687FD',
+  selectedIconColor:'white',
+  mainOffSetIos:20,
+  mainOffSetAndroid:0
+}
+
+  animatedValue= new Animated.Value(this.props.selected?this.props.selected:1);
 
   componentDidMount(){
-    this._start(selected)
+
+
+    this.setState({
+      icon1:this.props.icons[0],
+      icon2:this.props.icons[1],
+      icon3:this.props.icons[2],
+      icon4:this.props.icons[3],
+      icon5:this.props.icons[4],
+      iconColor:this.props.iconColor?this.props.iconColor:'black',
+      primColor:this.props.navColor?this.props.navColor:'#4687FD',
+      selectedIconColor:this.props.selectedIconColor?this.props.selectedIconColor:'white',
+    })
+
+    this._start(this.props.selected?this.props.selected:1) //select the tab else 1
+
   }
 
   state={
@@ -119,12 +136,18 @@ export default class App extends Component{
        extrapolate:"clamp"
     })
 
+    let off=(Platform.OS==='ios')?height:height+20
+    if(this.props.mainOffSetAndroid)
+      off=(Platform.OS==='ios')?height:height+20-this.props.mainOffSetAndroid
+    if(this.props.mainOffSetIos)
+      off=(Platform.OS==='ios')?height-this.props.mainOffSetIos:height+20
+
     return (
 
 
-<View style={{position:'absolute',top:height-mainOffSet+20}}>
+<View style={{position:'absolute',top:off}}>
 
-      <View style={{backgroundColor:primColor,position:'absolute',width:width,height:83,bottom:30+yoffset,
+      <View style={{backgroundColor:this.state.primColor,position:'absolute',width:width,height:83,bottom:30+yoffset,
       shadowColor: "#000",shadowOffset: {width: 1,height: 4},shadowOpacity: 0.5,shadowRadius: 10,}}></View> 
       
         <View style={{backgroundColor:'white',position:'absolute',
@@ -136,7 +159,7 @@ export default class App extends Component{
        
        <Animated.View style={{position:'absolute',bottom:0,left:navrr}}>
 
-          <View style={{backgroundColor:primColor,position:'absolute',
+          <View style={{backgroundColor:this.state.primColor,position:'absolute',
           bottom:65.5+yoffset
           ,width:45,
           right:61.8,
@@ -178,24 +201,24 @@ export default class App extends Component{
         
         <TouchableOpacity onPressOut={() => this._start(1)}>
         <Animated.View style={{opacity:this.state.i1,top:this.state.hh1}} >
-        <Icon name={icon1} size={iconSize} color={selectedIconColor} />
+        <Icon name={this.state.icon1} size={iconSize} color={this.state.selectedIconColor} />
         </Animated.View></TouchableOpacity>
 
 
         <TouchableOpacity onPressOut={() => this._start(2)}>
         <Animated.View style={{opacity:this.state.i2,top:this.state.hh2}} >
-        <Icon name={icon2} size={iconSize} color={selectedIconColor} />
+        <Icon name={this.state.icon2} size={iconSize} color={this.state.selectedIconColor} />
         </Animated.View></TouchableOpacity>
 
         <TouchableOpacity onPressOut={() => this._start(3)}>
         <Animated.View style={{opacity:this.state.i3,top:this.state.hh3}} >
-        <Icon name={icon3} size={iconSize} color={selectedIconColor} />
+        <Icon name={this.state.icon3} size={iconSize} color={this.state.selectedIconColor} />
 </Animated.View>
 </TouchableOpacity>
 
         <TouchableOpacity onPressOut={() => this._start(4)}>
         <Animated.View style={{opacity:this.state.i4,top:this.state.hh4}} >
-        <Icon name={icon4} size={iconSize} color={selectedIconColor} />
+        <Icon name={this.state.icon4} size={iconSize} color={this.state.selectedIconColor} />
         </Animated.View>
         </TouchableOpacity>
 
@@ -203,7 +226,7 @@ export default class App extends Component{
 
         <TouchableOpacity onPressOut={() => this._start(5)} >
         <Animated.View style={{opacity:this.state.i5,top:this.state.hh5}} >
-        <Icon name={icon5} size={iconSize} color={selectedIconColor} />
+        <Icon name={this.state.icon5} size={iconSize} color={this.state.selectedIconColor} />
         </Animated.View>
         </TouchableOpacity>
 
@@ -215,24 +238,24 @@ export default class App extends Component{
         
         <TouchableOpacity onPressOut={() => this._start(1)} style={{...styles.wicon}}>
         <Animated.View style={{opacity:this.state.id1,top:this.state.h1}} >
-        <Icon name={icon1} size={30} color={iconColor} />
+        <Icon name={this.state.icon1} size={30} color={this.state.iconColor} />
         </Animated.View></TouchableOpacity>
 
 
         <TouchableOpacity onPressOut={() => this._start(2)} style={{...styles.wicon}}>
         <Animated.View style={{opacity:this.state.id2,top:this.state.h2}} >
-        <Icon name={icon2} size={30} color={iconColor} />
+        <Icon name={this.state.icon2} size={30} color={this.state.iconColor} />
         </Animated.View></TouchableOpacity>
 
         <TouchableOpacity onPressOut={() => this._start(3)} style={{...styles.wicon}}>
         <Animated.View style={{opacity:this.state.id3,top:this.state.h3}} >
-        <Icon name={icon3} size={30} color={iconColor} />
+        <Icon name={this.state.icon3} size={30} color={this.state.iconColor} />
           </Animated.View>
     </TouchableOpacity>
 
         <TouchableOpacity onPressOut={() => this._start(4)} style={{...styles.wicon}}>
         <Animated.View style={{opacity:this.state.id4,top:this.state.h4}} >
-        <Icon name={icon4} size={30} color={iconColor} />
+        <Icon name={this.state.icon4} size={30} color={this.state.iconColor} />
         </Animated.View>
         </TouchableOpacity>
 
@@ -240,7 +263,7 @@ export default class App extends Component{
 
         <TouchableOpacity onPressOut={() => this._start(5)} style={{...styles.wicon}}>
         <Animated.View style={{opacity:this.state.id5?this.state.id5:1,top:this.state.h5}} >
-        <Icon name={icon5} size={30} color={iconColor} />
+        <Icon name={this.state.icon5} size={30} color={this.state.iconColor} />
         </Animated.View>
         </TouchableOpacity>
 
