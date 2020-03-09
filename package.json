@@ -13,7 +13,8 @@
     "@react-native-community/masked-view": "^0.1.7",
     "react": "16.9.0",
     "react-native": "0.61.5",
-    "react-native-vector-icons": "^6.6.0"
+    "react-native-vector-icons": "^6.6.0",
+    "rn-curved-navigation-bar": "file:/Users/prashant/APP/NPM/rn-curved-navigation-bar"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",

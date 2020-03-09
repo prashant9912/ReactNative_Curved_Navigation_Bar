@@ -22,7 +22,7 @@ let iconSize=25
 
 let mainOffSet=Platform.OS==='ios'?20:0;
 
-let slider = [(2*1-1)*((1*(width/5))/2)+84,(2*5-1)*((1*(width/5))/2)+84]
+let slider = [(2*1-1)*((1*(width/5))/2)+85,(2*5-1)*((1*(width/5))/2)+86]
 
 export default class App extends Component{
 
@@ -75,7 +75,7 @@ state={
     h5: new Animated.Value(0),
 
 
-    hh1: new Animated.Value(20),
+    hh1: new Animated.Value(300),
     hh2: new Animated.Value(20),
     hh3: new Animated.Value(20),
     hh4: new Animated.Value(20),
@@ -98,9 +98,9 @@ state={
 
     // this.setState({[idd]: new Animated.Value()})
     Animated.timing(a, {toValue: 0,duration: 100}).start()
-    Animated.timing(b, {toValue: 100,duration: 200}).start()
+    Animated.timing(b, {toValue: 100,duration: 100}).start()
     Animated.timing(c, {toValue: 1, duration: 200}).start() //icon circle upp 
-    Animated.timing(d , {toValue: 5, duration: 200}).start() //icon circle upp 
+    Animated.timing(d , {toValue: 5, duration: 300}).start() //icon circle upp 
 
     this.showall(id)
 }
