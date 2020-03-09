@@ -33,6 +33,7 @@ Props
 |selectedIconColor| string | white | selected icon color
 |mainOffSetIos| number | - | bottom offset of nav bar in ios 
 |mainOffSetAndroid |number | - | bottom offset of nav bar in android
+|navColor| string| #4687FD | Main navigation bar color
 
 ### Todo features
 👉🏼To implement change tab from foreign component<br/>
