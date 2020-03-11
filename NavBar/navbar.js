@@ -24,7 +24,7 @@ let mainOffSet=Platform.OS==='ios'?20:0;
 
 let slider = [(2*1-1)*((1*(width/5))/2)+85,(2*5-1)*((1*(width/5))/2)+86]
 
-export default class App extends Component{
+export default class CurvedNavBar extends Component{
 
 state={
   iconColor:'black', //default color black

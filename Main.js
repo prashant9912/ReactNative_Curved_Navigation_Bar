@@ -3,9 +3,9 @@ import { Text, StyleSheet, View,TouchableOpacity,Linking,Dimensions } from 'reac
 import Icon from "react-native-vector-icons/FontAwesome"
 
 
-import CurvedNavBar from 'rn-curved-navigation-bar'
+// import CurvedNavBar from 'rn-curved-navigation-bar'  //npm module do npm install
 
-import App from './App'
+import CurvedNavBar from './NavBar/navbar'
 
 const {height,width} = Dimensions.get('window')
 
