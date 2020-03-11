@@ -3,10 +3,11 @@
 
 Animated Curved Navigation Bar for React Native
 
-
-<img src="https://i.imgur.com/G1zYbRK.gif" width=400/>
+<img src="https://i.imgur.com/kN2eeDu.gif" width=400/>
 <br/>
-<img src="https://i.imgur.com/Gc0bpx9.gif" width=400/>
+<img src="https://i.imgur.com/G1zYbRK.gif" width=400/>
+
+
 
 Getting Started
 ---------
@@ -34,6 +35,17 @@ Props
 |mainOffSetIos| number | - | bottom offset of nav bar in ios 
 |mainOffSetAndroid |number | - | bottom offset of nav bar in android
 |navColor| string| #4687FD | Main navigation bar color
+|cb | function | - | returns page selected id that can be mapped
+
+### Example of using cb to change the state 
+
+   ```javascript
+   <CurvedNavBar icons={['air-horn','alarm','android-auto','auto-fix','bell-ring']} 
+   navColor={'#482ff7'}
+   cb={(id)=>{this.setState({page:id})}} //change the parent's state of page 
+   />
+   ```
+
 
 ### Todo features
 👉🏼To implement change tab from foreign component<br/>
