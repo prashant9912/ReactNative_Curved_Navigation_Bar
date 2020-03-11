@@ -3,10 +3,11 @@
 
 Animated Curved Navigation Bar for React Native
 
-
-<img src="https://i.imgur.com/G1zYbRK.gif" width=400/>
+<img src="https://i.imgur.com/kN2eeDu.gif" width=400/>
 <br/>
-<img src="https://i.imgur.com/Gc0bpx9.gif" width=400/>
+<img src="https://i.imgur.com/G1zYbRK.gif" width=400/>
+
+
 
 Getting Started
 ---------
