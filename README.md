@@ -40,6 +40,9 @@ Props
 ### Example of using cb to change the state 
 
    ```javascript
+   import CurvedNavBar from 'rn-curved-navigation-bar'
+
+
    <CurvedNavBar icons={['air-horn','alarm','android-auto','auto-fix','bell-ring']} 
    navColor={'#482ff7'}
    cb={(id)=>{this.setState({page:id})}} //change the parent's state of page 
