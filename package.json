@@ -12,17 +12,17 @@
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.7",
     "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react-native": "^0.73.6",
     "react-native-vector-icons": "^6.6.0",
     "rn-curved-navigation-bar": "file:/Users/prashant/APP/NPM/rn-curved-navigation-bar"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/runtime": "^7.6.2",
-    "@react-native-community/eslint-config": "^0.0.5",
+    "@react-native-community/eslint-config": "^3.2.0",
     "babel-jest": "^24.9.0",
     "eslint": "^6.5.1",
-    "jest": "^24.9.0",
+    "jest": "^29.7.0",
     "metro-react-native-babel-preset": "^0.56.0",
     "react-test-renderer": "16.9.0"
   },
